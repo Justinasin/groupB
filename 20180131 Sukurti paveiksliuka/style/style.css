@@ -1,25 +1,53 @@
-* {
+/* * {
     box-sizing: border-box;
     border: 1px solid black;
-}
+} */
 
 body {
     background-image: url("../img/front_page_PNG.png");
     background-size: cover;
     color: white;
     padding: 2% 10%;
+    font-family: 'Montserrat', sans-serif;
 }
 
 Header {
     display: flex;
+    align-items: flex-end;
+}
+
+nav {
+    width: 55%;
+}
+
+article {
+    margin-top: 3em;
+    /* clip-path: polygon(0 0%, 90% 0, 66% 100%, 0 100%); */
+    /* transform: skewY(-50deg);
+    transform-origin: top left;
+    display: table-caption; */
 }
 
 .navigation {
     list-style: none;
     display: flex;
+    padding-inline-start: inherit;
+    margin: 0;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
 
 }
 
+/* h1,
+body>article>p {
+    transform: skewY(50deg);
+    transform-origin: top left;
+} */
 
 body>header>nav>ul>li>a {
     color: white;
@@ -33,4 +61,34 @@ body>header>nav>ul>li>a:hover {
 
 #logo {
     background-size: cover;
+}
+
+.signin {
+    margin-left: auto;
+    display: flex;
+    width: 25%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+body>header>div>p {
+    margin: 0;
+}
+
+body>article>p {
+    margin: 0;
+}
+
+#signInBtn {
+    height: 3em;
+    border-radius: 10%;
+    border-width: 0;
+}
+
+#createDesignBtn {
+    background-color: crimson;
+    padding: 1em;
+    border-radius: 10%;
+    margin-top: 2em;
+    border-width: 0;
 }
