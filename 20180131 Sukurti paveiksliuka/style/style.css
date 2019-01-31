@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+body {
+    background-image: url("../img/front_page_PNG.png");
+    background-size: cover;
+    color: white;
+    padding: 2% 10%;
+}
+
+Header {
+    display: flex;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+
+}
+
+
+body>header>nav>ul>li>a {
+    color: white;
+    text-decoration: none;
+}
+
+body>header>nav>ul>li>a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+#logo {
+    background-size: cover;
+}
