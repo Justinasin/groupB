@@ -1,0 +1,28 @@
+body {
+
+background-image: url('background.png');
+min-height:100vh;
+max-height:100%;
+max-width: 100%;
+background-size:cover;
+margin: 50px 200px 0px 200px;
+
+
+}
+.logo{
+
+width:10%;
+
+}
+
+.nav{
+	
+display:inline;
+	
+}
+.signin, .signup {
+
+display:inline;
+float:right;
+	
+}
