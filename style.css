@@ -1,28 +1,77 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+*,
+*::before,
+*::after{
+
+	box-sizing: border-box;
+	border:1px solid red;
+
+}
+
 body {
 
-background-image: url('background.png');
-min-height:100vh;
-max-height:100%;
-max-width: 100%;
-background-size:cover;
-margin: 50px 200px 0px 200px;
+	background-image: url('background.png');
+	min-height:100vh;
+	max-height:100%;
+	max-width: 100%;
+	background-size:cover;
+	margin: 50px 200px 0px 200px;
 
 
 }
-.logo{
 
-width:10%;
+nav {
+
+	height: 50px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-family: 'Open Sans',serif;
+	color: white;
 
 }
+nav li {
 
-.nav{
+	margin-right: 40px;
+
+}
+.right {
+
+	margin-left: auto;
+	padding: 0;
+
+}
+#signup {
+
+	color: #000b60;
+	background-color: #ffffff;
+	border-radius: 5px;
+	padding: 20px 40px 20px 40px; 
 	
-display:inline;
-	
-}
-.signin, .signup {
 
-display:inline;
-float:right;
-	
 }
+
+header ul li {
+
+	display: inline-block;
+
+}
+
+.list {
+
+	margin: 0;
+	padding: 0;	
+	list-style: none;
+	display: flex;
+
+}
+
+
+#logo{
+
+	width:10%;
+
+}
+
+
