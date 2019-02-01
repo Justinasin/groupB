@@ -1,0 +1,150 @@
+/**,
+*::before,
+*::after{
+	box-sizing: border-box;
+	border: 1px solid red;
+}*/
+
+body {
+    background-image: url("../images/homepage.png");
+    min-height: 100vh;
+    max-height: 100%;
+    max-width: 100%;
+    background-size: cover;
+    margin: 10px 200px 0px 200px;
+    font-family: 'Montserrat', sans-serif;    
+    height: 100%;
+}
+
+ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	margin-top: 50px;
+}
+
+html{
+	font-size: 16px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+section{
+	padding: 40px 0;
+}
+
+header ul li {
+    display: inline-block;
+}
+
+nav li {
+    margin-right: 40px;
+}
+
+/*.home {
+	background-image: url("../images/homepage.png");
+	background-size: cover;
+	background-position: center;
+	padding: 0;
+	min-height: 100vh;
+	margin: 0 auto;
+	max-width: 100%;
+}*/
+.container {
+	align-content: center;
+	justify-content: center;
+}
+.header {
+	display: flex;
+	flex-direction: row;
+	/*justify-content: space-between;*/
+}
+
+.nav-bar{
+	/*min-width: 100%;*/
+}
+.flex-container,
+.nav-bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: space-between;
+}
+.nav-button{
+	justify-content: space-between;
+	margin-left: 250px;
+}
+.nav-home{
+	display: flex;
+	justify-content: center;
+	/*align-content: center;*/
+}
+.topnavmenu{
+	display: flex;
+	justify-content: center;
+
+}
+
+#signup {
+    color: #000b60;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px 40px 20px 40px;
+    font-weight: bold;
+}
+/*.logo{
+	max-height: 50%;	
+}
+
+.logoImage{
+	max-height: 100%;	
+}*/
+.flex-container a {
+	text-decoration: none;
+	font-family: 'Montserrat', sans-serif;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+.flex-container a:hover{
+/*	background-color: #ddd;
+	color: #b6261b;*/
+	text-decoration: underline;
+
+}
+.articleName {
+    font-size: 4rem;
+    color: #ffffff;
+    font-weight: 900;
+    margin-bottom: 0; 
+}
+.articleName p {
+    margin-top: 0;
+}
+
+.text {
+	font-family: 'Montserrat', sans-serif;
+	color: #ffffff;
+	font-weight: 400;
+}
+
+.section{
+	margin-left: 120px;
+}
+
+
+
+
+
+
+
+.button {
+    border-radius: 8px;
+    border: none;
+    padding: 20px 30px;
+    margin-top: 40px;
+    background-color: #ff5969;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+}
