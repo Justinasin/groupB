@@ -13,14 +13,14 @@
         <nav class="navigation">
             <img id="logo" src="Logo.png">
             <ul class="left">
-                <li><a title="home">HOME</a></li>
-                <li><a title="products">PRODUCTS</a></li>
-                <li><a title="templates">TEMPLATES</a></li>
-                <li><a title="pricing">PRICING</a></li>
+                <li><a href="index.html" class="leftButton" title="home">HOME</a></li>
+                <li><a href="#products" class="leftButton" title="products">PRODUCTS</a></li>
+                <li><a href="#products" class="leftButton" title="templates">TEMPLATES</a></li>
+                <li><a href="#pricing" class="leftButton" title="pricing">PRICING</a></li>
             </ul>
             <ul class="right">
-                <li><a title="signin">SIGN IN</a></li>
-                <li><a title="signup" id="signup">SIGN UP</a></li>
+                <li><a href="#signin" title="signin" id="signin">SIGN IN</a></li>
+                <li><a href="#signup" title="signup" id="signup">SIGN UP</a></li>
             </ul>
         </nav>
     </header>
@@ -33,19 +33,34 @@
                 <p class="text">for your ads, social media, blogs and websites.</p>
                 <p class="text">Make your project stand out!</p>
 
-            </article>
-            <button class="button" type="button">CREATE DESIGN ➜</button>
-        </section>
 
+            </article>
+            <a class="button" href="#popup1" type="button">CREATE DESIGN ➜</a>
+            <div id="popup1" class="overlay">
+                <div class="popup">
+                    <div class="topButtons">
+                        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign
+                            In</label>
+                        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign
+                            Up</label>
+
+                    </div>
+                    
+                    <a class="close" href="#">&times;</a>
+                    
+                </div>
+            </div>
+        </section>
     </main>
+
     <footer>
 
-<ul class="dots">
-    <li id="roundDot"></li>
-    <li class="dot"></li>
-    <li class="dot"></li>
-    <li class="dot"></li>
-</ul>
+        <ul class="dots">
+            <li class="dot" id="roundDot"></li>
+            <li class="dot"></li>
+            <li class="dot"></li>
+            <li class="dot"></li>
+        </ul>
 
     </footer>
 </body>
