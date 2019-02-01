@@ -24,10 +24,6 @@ nav {
 
 article {
   margin-top: 3em;
-  /* clip-path: polygon(0 0%, 90% 0, 66% 100%, 0 100%); */
-  /* transform: skewY(-50deg);
-    transform-origin: top left;
-    display: table-caption; */
 }
 
 .navigation {
@@ -136,11 +132,6 @@ body > article > p {
   width: 50%;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
   position: relative;
-}
-
-.content {
-  max-height: 400px;
-  overflow: auto;
 }
 
 #content-immage {
