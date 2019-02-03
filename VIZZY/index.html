@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Aiste Zalubaite">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <title>VIZZY home</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navigation-bar">
+            <a href="index.html"><img id="logo" title="logo" src="images/VIZZY_logo.png" ></a>
+            <ul>
+                <li><a id="home-page" href="#">HOME</a></li>
+                <li><a href="pages/products.html">PRODUCTS</a></li>
+                <li><a href="pages/templates.html">TEMPLATES</a></li>
+                <li><a href="pages/pricing.html">PRICING</a></li>
+            </ul>
+            <a id="sign-in">SIGN IN</a>
+            <button name="sign-up" id="sign-up"> SIGN UP</button>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <header>
+                <h1>Create Stunning Visual Media</h1>
+            </header>
+            <p>Super simple tool to create trendy videos and pictures for your ads, social media, blogs and websites.<br/> Make your project stand out!</p>
+
+            <div id="create-design-button" class="button-general-style"><a id="popup-link" href="#popup"> CREATE DESIGN ➔</a></div>
+        </article>
+        <section id="popup">
+            <header id="popup-header">
+                <h2>Register</h2>
+                <span id="close-icon">&times;</span>
+            </header>
+            <form id="registration" action="#">
+                <label>First name:</label>
+                <input type="text" name="first-name" maxlength="30" />
+                <br />
+                <label>Last name:</label>
+                <input type="text" name="last-name" maxlength="40" />
+                <br />
+                <label>Email:</label>
+                <input type="text" name="email" />
+                <br />
+                <label>Password:</label>
+                <input type="password" name="password" />
+                <label>Confirm <br /> password:</label>
+                <input type="password" name="confirm-password" />
+                <button id="register-button" class="button-general-style"> REGISTER</button>
+
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
