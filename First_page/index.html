@@ -37,15 +37,70 @@
 				<div class="nav-button">
 					<ul class="flex-container topnavmenu">
 						<li>
-							<a href="#sign in">sign in</a>
+							<a id="signin" href="#popup-signin">sign-in</a>
 						</li>
 						<li>
-							<a id="signup" href="#sign up">sign up</a>
+							<a id="signup" href="#popup-signup">sig-up</a>
 							<!-- Pasikeist situs i mygtukus -->
 						</li>
 					</ul>
 				</div>
-			</nav>		
+			</nav>
+
+			<!-- popup langas Nr1-->
+	        <div id="popup-signin" class="overlay">
+				<div class="popup">
+					<h2>Sign In to WIZZY</h2>
+					<a class="close" href="#">&times;</a>
+					<div class="content">
+						<form action="">
+							<p>User name:</p><br>
+							<input type="text" name="userid">
+							<br>
+							<p>User password:</p><br>
+							<input type="password" name="psw">
+							<br>
+							<br>
+							<input type="button" value="Sign In">
+						</form>						
+					</div>
+				</div>
+			</div>
+
+			<!-- popup langas Nr2-->
+
+			<div id="popup-signup" class="overlay">
+				<div class="popup">
+					<h2>Sign Up to WIZZY</h2>
+					<a class="close" href="#">&times;</a>
+					<div class="content">
+						<form action="">
+							<p>First name:</p>
+							<input type="text" name="userid" required>
+							
+							<p>Last name:</p>
+							<input type="text" name="userid" required>
+							<br>
+							<p>Email:</p>
+							<input type="email" name="userid" required>
+							<br>
+							<p>Password:</p>
+							<input type="password" name="psw" required>
+							<br>
+							<p>Repeat password:</p>
+							<input type="password" name="psw" required>
+							
+							<br>
+							<input type="checkbox">
+							<p>I accept the terms & conditions</p>
+							
+							<input type="button" value="Sign Up">
+						</form>						
+					</div>
+				</div>
+			</div>
+
+
 		</header>
 		<main>
 	        <section class="section">
@@ -59,7 +114,7 @@
 	                	<p>Make your project stand out!</p>
 	            	</h2>
 	            </article>
-	            <button class="button" type="button">CREATE DESIGN &#8594;</button>
+	            <button class="button" type="button"><h3 class="button-text">CREATE DESIGN &#8594;</h3></button>
 	        </section>
     	</main>
 	<!-- <div id="home" class="home" >
@@ -72,14 +127,3 @@
 
 
 
-<!-- norint kad nuorodos atsidarytu naujame lange nepaliekant vartotojo tinklapio nuorodos tage prideti target="_blank" -->
-
-
-
-<!-- nepamirsti papildyti nuorodu tagu su tiesioginemis nuorodomis i tinklapius ir pacio tinklapio dalis naudoti tik ID href="#ID" -->
-
-
-<!-- Fav icons generator -->
-
-
-<!-- Visa turini kuri noresim keisti geriau ikeldineti i HTML faila nes kitu atveju bus galima keist informacija tik per css failus kas bus labai nepatogu. -->
