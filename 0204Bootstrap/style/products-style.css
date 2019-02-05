@@ -1,0 +1,12 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+  background-image: url('../img/front_page1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+article {
+  margin-top: 6em;
+}

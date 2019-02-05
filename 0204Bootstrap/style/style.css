@@ -4,9 +4,9 @@ body {
 }
 
 .carousel {
-  position: absolute;
-  top: 0px;
-  height: 100vh;
+  /* position: absolute; */
+  /* top: 0px; */
+  /* height: 100vh; */
   z-index: -100;
 }
 
@@ -26,3 +26,7 @@ article {
 #modal1-immage {
   width: 100%;
 }
+
+/* .background {
+  background-size: 100%
+} */
