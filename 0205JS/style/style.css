@@ -1,0 +1,32 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+}
+
+.carousel {
+  /* position: absolute; */
+  /* top: 0px; */
+  /* height: 100vh; */
+  z-index: -100;
+}
+
+.carousel-inner>.carousel-item>img {
+  /* width: 100vh;
+  height: 100vh; */
+}
+
+article {
+  margin-top: 6em;
+}
+
+#createDesignBtn {
+  margin-top: 3em;
+}
+
+#modal1-immage {
+  width: 100%;
+}
+
+/* .background {
+  background-size: 100%
+} */
