@@ -1,0 +1,157 @@
+body{
+	background: url(front_page.png);
+  	background-repeat: no-repeat;
+	//background-position: left top;
+	height: 100%;
+  	min-height: 100vh;
+	background-size: cover;
+		
+	font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 5px 25px;
+}
+
+
+.head {
+	display: flex; //inline-flex
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.logo {
+	height: 30px;
+}
+
+
+.navigation {
+	display: flex;
+	align-items: center;
+}
+
+
+.ul_head {
+	display: flex;
+	list-style-type: none;
+	padding: 0px;
+	text-transform: uppercase;
+}
+
+.ul_head a {
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+	
+}
+
+.ul_head a:hover {
+	border-bottom: 2px solid white;
+}
+
+.ul_head li{
+	padding: 16px;
+}
+
+.btn {
+	border-radius: 5px;
+	padding: 15px 30px;
+	font-weight: bold;
+}
+
+.btn.btn-white{
+	background-color: white;
+	border: 1px solid white;
+	color: blue;
+}
+
+.btn.btn-red {
+	background-color: rgb(255,89,105);
+	border: 1px solid rgb(255,89,105);
+	color: white;
+	text-transform: uppercase;
+}
+.btn.btn-a {
+	text-decoration: none;
+}
+
+.text {
+	color: white;
+	font-size: 18px;	
+	margin-bottom: 75px;
+}
+
+
+
+.content h1 {
+	margin-bottom: 50px;
+	color: white;
+	font-size: 70px;	
+	font-weight: 900; 
+}
+
+
+//popapas
+
+.createDesignBtn-popup {
+  background-color: #f04a55;
+  color: #193eca;
+  font-size: 1em;
+  font-weight: 1000;
+  padding: 1em;
+  border-radius: 10%;
+  margin-top: 2em;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 200ms;
+  visibility: hidden;
+  opacity: 0;
+  height: fit-content;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.close {
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  top: 0.5em;
+  right: 0.5em;
+  opacity: 0.8;
+  transition: all 200ms;
+  font-size: 2em;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+.close:hover {
+  opacity: 1;
+}
+
+.popup {
+  margin: 8em auto;
+  padding: 1em;
+  background: #193cca;
+  border: 1px solid #666;
+  width: 50%;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.content-popup {
+  max-height: 300px;
+  overflow: auto;
+}
