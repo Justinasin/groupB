@@ -21,49 +21,54 @@ let body = `
             </div>
         </div>
     </div>
-    <!-- Navbar -->
+  
     <div class="container">
-        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark ">
-            <a class="navbar-brand" href="#">
-                <img src="./img/VIZZY_logo.png" width="150" height="30" class="d-inline-block align-top" alt="" />
-            </a>
-            <button class="navbar-toggler btn-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+       
+        <nav id="navbar"></nav>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link text-white " href="#home" onclick=insertArticle(article1) >HOME <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#products" onclick=insertArticle(article2) >PRODUCTS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#templates">TEMPLATES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#pricing">PRICING</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <button class="btn my-2 my-sm-0 text-white" type="submit">
-                        SIGN IN
-                    </button>
-                    <button class="btn btn-light my-2 my-sm-0" type="submit">
-                        SIGN UP
-                    </button>
-                </form>
-            </div>
-        </nav>
-
-        <!-- Article -->
-        <article id = "article" class="text-white">
-        </article>
+        <article id = "article" class="text-white"> </article>
 
     </div>
 </body>
+`;
+
+let navbar = `
+<div class="navbar navbar-expand-lg navbar-dark ">
+    <a class="navbar-brand" href="#">
+        <img src="./img/VIZZY_logo.png" width="150" height="30" class="d-inline-block align-top" alt="" />
+    </a>
+    <button class="navbar-toggler btn-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link text-white " href="#home" onclick=insertArticle(article1) >HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#products" onclick=insertArticle(article2) >PRODUCTS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#templates">TEMPLATES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#pricing">PRICING</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <button class="btn my-2 my-sm-0 text-white" type="submit">
+                SIGN IN
+            </button>
+            <button class="btn btn-light my-2 my-sm-0" type="submit">
+                SIGN UP
+            </button>
+        </form>
+    </div>
+</div>
+
+
 `;
 
 let article1 = `
@@ -135,9 +140,9 @@ let insertNode = (id, node) => document.getElementById(id).innerHTML = node;
 //tmp for Html onClick
 let insertArticle = (node) => document.getElementById("article").innerHTML = node;
 
-insertNode("start", body)
-insertNode("article", article1)
-
+insertNode("start", body);
+insertNode("navbar", navbar);
+insertNode("article", article1);
 
 
 
