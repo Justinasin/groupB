@@ -45,10 +45,10 @@ let navbar = `
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link text-white " href="#home" onclick=insertArticle(article1) >HOME <span class="sr-only">(current)</span></a>
+                <a class="nav-link text-white " href="#home" >HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#products" onclick=insertArticle(article2) >PRODUCTS</a>
+                <a class="nav-link text-white" href="#products" >PRODUCTS</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="#templates">TEMPLATES</a>
@@ -137,18 +137,31 @@ let article2 = `
 
 let insertNode = (id, node) => document.getElementById(id).innerHTML = node;
 
-//tmp for Html onClick
-let insertArticle = (node) => document.getElementById("article").innerHTML = node;
-
 insertNode("start", body);
 insertNode("navbar", navbar);
 insertNode("article", article1);
 
+window.onhashchange = () => {
+    let href = window.location.href;
+    // console.log(href);
+    let query = href.split('#')[1];
+    // console.log(query);
+    switch (query) {
+        case 'home':
+            insertNode("article", article1);
+            break;
+        case 'products':
+            insertNode("article", article2);
+            break;
+        default:
+            insertNode("article", article1);
+    }
+};
 
 
 
-
-
+//tmp for Html onClick
+// let insertArticle = (node) => document.getElementById("article").innerHTML = node;
 
 // //Insert element after
 // function insertAfter(newNode, referenceNode) {
