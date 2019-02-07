@@ -1,4 +1,5 @@
 function template() {
+
     var text = `<div id="carouselExampleIndicators" class="carousel slide h-100 position-absolute" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -31,7 +32,7 @@ function template() {
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link text-white" href="#" onclick="addHome()">Home</a>
+                <a class="nav-link text-white" href="#=" onclick="addHome()">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="#" onclick="addAboutUs()">About us</a>
@@ -92,5 +93,36 @@ function template() {
 
     document.getElementById("body").innerHTML = text;
 
+
+
 }
+
+let insertNode = (id, node) => document.getElementById(id).innerHTML = node;
+
+window.onhashchange = () => {
+    let href = window.location.href;
+
+    let query = href.split('#')[1];
+
+    switch (query) {
+        case 'home':
+            insertNode("article", homeDiv);
+            break;
+        case 'aboutus':
+            insertNode("article", aboutDiv);
+            break;
+        case 'pricing':
+            insertNode("article", pricingDiv);
+            break;
+        case 'contacts':
+            insertNode("article", contactDiv);
+            break;
+        default:
+            insertNode("article", homeDiv);
+    }
+};
+
+
+
+
 
