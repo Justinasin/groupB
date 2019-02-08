@@ -1,0 +1,16 @@
+var temp = "x";
+var size = 20;
+
+for(var i = 0;i<=size;i++){
+
+if(i < size / 2) {
+console.log(temp);
+temp = temp + "x";
+}
+
+if(i >= size / 2) {
+console.log(temp);
+temp = temp.slice(0,-1);
+
+}
+}
