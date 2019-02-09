@@ -1,125 +1,16 @@
-const bodyJson =
-    `{
-    "body": {
-        "div": [{
-                "-id": "carouselIndicators",
-                "-class": "carousel slide position-absolute",
-                "-data-ride": "carousel",
-                "-data-interval": "5000",
-                "ol": {
-                    "-class": "carousel-indicators",
-                    "li": [{
-                            "-data-target": "#carouselIndicators",
-                            "-data-slide-to": "0",
-                            "-class": "active"
-                        },
-                        {
-                            "-data-target": "#carouselIndicators",
-                            "-data-slide-to": "1"
-                        },
-                        {
-                            "-data-target": "#carouselIndicators",
-                            "-data-slide-to": "2"
-                        }
-                    ]
-                },
-                "div": {
-                    "-class": "carousel-inner",
-                    "div": [{
-                            "-class": "carousel-item active",
-                            "img": {
-                                "-src": "./img/front_page1.png",
-                                "-class": "d-block w-100",
-                                "-alt": "..."
-                            },
-                            "div": {
-                                "-class": "carousel-caption d-none d-md-block"
-                            }
-                        },
-                        {
-                            "-class": "carousel-item",
-                            "img": {
-                                "-src": "./img/front_page2.png",
-                                "-class": "d-block w-100",
-                                "-alt": "..."
-                            }
-                        },
-                        {
-                            "-class": "carousel-item",
-                            "img": {
-                                "-src": "./img/front_page3.png",
-                                "-class": "d-block w-100",
-                                "-alt": "..."
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "-class": "container",
-                "nav": {
-                    "-id": "navbar"
-                },
-                "article": {
-                    "-id": "article",
-                    "-class": "text-white"
-                }
-            }
-        ]
-    }
-}`
-
-const testJson1 =
-    `{
-    "div": {
-        "class": "navclass",
-        "id": "navId",
-        "ul": {
-            "class": "ulclass",
-            "id": "ulId"
-            "li": [{
-                    "class": "li1class",
-                    "id": "l1Id"
-                },
-                {
-                    "class": "li2class",
-                    "id": "l2Id"
-                },
-                
-            ]
-        },
-    }
-}`
-
-const testJson =
-    `{
-    "div": {
-        "-class": "navclass",
-        "-id": "navId"
-    }
-}`
-
-
-// let start = document.getElementById("start");
-// let parent = document.getElementById("start");
-
-// document.getElementById(id).innerHTML = node
-
-// let newElement = document.createElement('div');
-let newElement = document.getElementById("start")
-console.log("newElement= ", newElement);
-
 let bodyJsonPars = JSON.parse(bodyJson);
-console.log('bodyJsonPars= ', bodyJsonPars)
+let navbarJsonPars = JSON.parse(navbarJson);
+let article1JsonPars = JSON.parse(article1Json);
+let article2JsonPars = JSON.parse(article2Json);
 
-let body2 = jsonToHtml(bodyJsonPars, newElement);
-setTimeout(console.log("body2 =", body2), 5000);
+let body = nodeToString(jsonToHtml(bodyJsonPars, document.createElement('div')));
+let navbar = nodeToString(jsonToHtml(navbarJsonPars, document.createElement('div')));
+let article1 = nodeToString(jsonToHtml(article1JsonPars, document.createElement('div')));
+let article2 = nodeToString(jsonToHtml(article2JsonPars, document.createElement('div')));
 
-jsonToHtml(bodyJsonPars, newElement);
-insertNode("start", newElement);
-
-// insertNode("navbar", navbar);
-// insertNode("article", article1);
+insertNode("start", body)
+insertNode("navbar", navbar);
+insertNode("article", article1);
 
 //Router
 window.onhashchange = () => {
@@ -138,6 +29,15 @@ window.onhashchange = () => {
     }
 };
 
+
+function nodeToString(node) {
+    let tmpNode = document.createElement("div");
+    tmpNode.appendChild(node.cloneNode(true));
+    let str = tmpNode.innerHTML;
+    tmpNode = node = null; // prevent memory leaks in IE
+    return str;
+}
+
 function insertNode(id, node) {
     document.getElementById(id).innerHTML = node
 };
@@ -145,27 +45,27 @@ function insertNode(id, node) {
 
 function jsonToHtml(json, parent) {
     let keys = Object.keys(json);
-    console.log('keys= ', keys);
+    // console.log('keys= ', keys);
 
     for (let key of keys) {
-        console.log('key= ', key);
-
         let value = json[key];
-        console.log('value= ', value);
 
         //Atribute names in Json have '-' at the beginning   
         if (key.charAt(0) == '-') {
             parent.setAttribute(key.substr(1), value);
 
+            //Text content has '#text' key
+        } else if (key == "#text") {
+            parent.textContent = value;
+
             //Array keys are numbers 
         } else if (parseInt(key) > -1) {
-            console.log("parentTag= ", parent.tagName);
             let child = document.createElement(parent.tagName);
             if (typeof value != "string") {
                 jsonToHtml(value, child);
             }
             parent.appendChild(child);
-            console.log("parent= ", parent);
+            // console.log("parent= ", parent);
 
         } else {
             let child = document.createElement(key);
@@ -173,48 +73,8 @@ function jsonToHtml(json, parent) {
                 jsonToHtml(value, child);
             }
             parent.appendChild(child);
-            console.log("parent= ", parent);
+            // console.log("parent= ", parent);
         }
     }
+    return parent;
 }
-
-
-
-
-///////////////////////////////////////////////////
-
-
-// let key = null;
-
-// let jsonToHtml = (json) => {
-
-//     for (let key in json) {
-//         console.log('key= ', key)
-
-//         if (key.charAt(0) != '-') {
-//             key = document.createElement(key)
-//             console.log('key= ', key);
-//         } else {
-//             key.setAttribute(key.substr(1), "value")
-//         }
-
-
-
-
-//         if (json.hasOwnProperty(key)) {
-//             let child = json[key];
-//             console.log('child= ', child);
-//             jsonToHtml(child);
-//         }
-
-
-
-
-
-// console.log('keys= ', json[key]);
-// console.log('getOwnPropertyNames= ', Object.getOwnPropertyNames(key));
-// jsonToHtml(key);
-// }
-// }
-
-//jsonToHtml(bodyJsonPars);
