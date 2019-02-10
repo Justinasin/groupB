@@ -1,6 +1,6 @@
 //www.utilities-online.info/xmltojson/
 const bodyJson =
-    `{
+  `{
     "body": {
         "div": [{
                 "-id": "carouselIndicators",
@@ -71,7 +71,7 @@ const bodyJson =
 }`
 
 const navbarJson =
-    `{
+  `{
     "div": {
       "-class": "navbar navbar-expand-lg navbar-dark ",
       "a": {
@@ -157,10 +157,10 @@ const navbarJson =
     }
   }`
 
-const article1Json =
-    `{    
+const articleJson1 =
+  `{    
     "div": {
-        "div": [
+        "div": 
         {
             "-class": "row",
             "div": [
@@ -180,67 +180,8 @@ const article1Json =
             { "-class": "col-3" }
             ]
         },
-        {
-            "-class": "modal fade",
-            "-id": "Modal1",
-            "-tabindex": "-1",
-            "-role": "dialog",
-            "-aria-labelledby": "Modal1Label",
-            "-aria-hidden": "true",
-            "div": {
-            "-class": "modal-dialog modal-dialog-centered modal-lg",
-            "-role": "document",
-            "div": {
-                "-class": "modal-content",
-                "div": [
-                {
-                    "-class": "modal-header",
-                    "h5": {
-                    "-class": "modal-title",
-                    "-id": "Modal1Label",
-                    "#text": "Create design"
-                    },
-                    "button": {
-                    "-type": "button",
-                    "-class": "close",
-                    "-data-dismiss": "modal",
-                    "-aria-label": "Close",
-                    "span": {
-                        "-aria-hidden": "true",
-                        "#text": "X"
-                    }
-                    }
-                },
-                {
-                    "-class": "modal-body",
-                    "p": "Please check at what phase you are and use our site accordingly",
-                    "img": {
-                    "-id": "modal1-immage",
-                    "-src": "./img/progress.jpg",
-                    "-alt": "progress"
-                    }
-                },
-                {
-                    "-class": "modal-footer",
-                    "button": [
-                    {
-                        "-type": "button",
-                        "-class": "btn btn-secondary",
-                        "-data-dismiss": "modal",
-                        "#text": "Foff"
-                    },
-                    {
-                        "-type": "button",
-                        "-class": "btn btn-primary",
-                        "#text": "Pricing"
-                    }
-                    ]
-                }
-                ]
-            }
-            }
-        }
-        ],
+
+      
         "button": {
         "-id": "createDesignBtn",
         "-type": "button",
@@ -252,7 +193,71 @@ const article1Json =
     }      
   }`
 
-const article2Json = `{
+const modalJson =
+  `{
+    "div": {
+      "-class": "modal fade",
+      "-id": "Modal1",
+      "-tabindex": "-1",
+      "-role": "dialog",
+      "-aria-labelledby": "Modal1Label",
+      "-aria-hidden": "true",
+      "div": {
+      "-class": "modal-dialog modal-dialog-centered modal-lg",
+      "-role": "document",
+      "div": {
+          "-class": "modal-content",
+          "div": [
+          {
+              "-class": "modal-header",
+              "h5": {
+              "-class": "modal-title",
+              "-id": "Modal1Label",
+              "#text": "Create design"
+              },
+              "button": {
+              "-type": "button",
+              "-class": "close",
+              "-data-dismiss": "modal",
+              "-aria-label": "Close",
+              "span": {
+                  "-aria-hidden": "true",
+                  "#text": "X"
+              }
+              }
+          },
+          {
+              "-class": "modal-body",
+              "p": "Please check at what phase you are and use our site accordingly",
+              "img": {
+              "-id": "modal1-immage",
+              "-src": "./img/progress.jpg",
+              "-alt": "progress"
+              }
+          },
+          {
+              "-class": "modal-footer",
+              "button": [
+              {
+                  "-type": "button",
+                  "-class": "btn btn-secondary",
+                  "-data-dismiss": "modal",
+                  "#text": "Foff"
+              },
+              {
+                  "-type": "button",
+                  "-class": "btn btn-primary",
+                  "#text": "Pricing"
+              }
+              ]
+          }
+          ]
+      }
+      }
+    }
+}`
+
+const articleJson2 = `{
     "div": {
         "-class": "row",
         "div": [
@@ -274,4 +279,21 @@ const article2Json = `{
             }
         ]
     }
+}`
+
+const testJson = `{
+
+"form": {
+    "-class": "form-class",
+    "button": [
+      {
+        "-class": "btn1-class",
+        "#text": "BUTT 1"
+      },
+      {
+        "-class": "btn2-class",
+        "#text": "BUTT 2"
+      }
+    ]
+  }
 }`

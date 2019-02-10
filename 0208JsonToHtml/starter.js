@@ -1,16 +1,18 @@
-let bodyJsonPars = JSON.parse(bodyJson);
-let navbarJsonPars = JSON.parse(navbarJson);
-let article1JsonPars = JSON.parse(article1Json);
-let article2JsonPars = JSON.parse(article2Json);
+// let test = makeNodeFromJson(testJson);
+// insertNodeInHtml("start", test)
 
-let body = nodeToString(jsonToHtml(bodyJsonPars, document.createElement('div')));
-let navbar = nodeToString(jsonToHtml(navbarJsonPars, document.createElement('div')));
-let article1 = nodeToString(jsonToHtml(article1JsonPars, document.createElement('div')));
-let article2 = nodeToString(jsonToHtml(article2JsonPars, document.createElement('div')));
+let bodyNode = makeNodeFromJson(bodyJson);
+let navbarNode = makeNodeFromJson(navbarJson);
+let articleNode1 = makeNodeFromJson(articleJson1);
+let articleNode2 = makeNodeFromJson(articleJson2);
+let modalNode = makeNodeFromJson(modalJson);
 
-insertNode("start", body)
-insertNode("navbar", navbar);
-insertNode("article", article1);
+insertNodeInHtml("start", bodyNode)
+insertNodeInHtml("navbar", navbarNode);
+insertNodeInHtml("article", articleNode1);
+appendChildInHtml("article", modalNode);
+
+
 
 //Router
 window.onhashchange = () => {
@@ -19,16 +21,34 @@ window.onhashchange = () => {
 
     switch (query) {
         case 'home':
-            insertNode("article", article1);
+            insertNodeInHtml("article", articleNode1);
+            appendChildInHtml("article", modalNode);
             break;
         case 'products':
-            insertNode("article", article2);
+            insertNodeInHtml("article", articleNode2);
             break;
         default:
-            insertNode("article", article1);
+            insertNodeInHtml("article", articleNode1);
+            appendChildInHtml("article", modalNode);
     }
 };
 
+function insertNodeInHtml(id, node) {
+    document.getElementById(id).innerHTML = node;
+};
+
+function appendChildInHtml(id, child) {
+    let e = document.createElement('div');
+    e.innerHTML = child;
+    document.getElementById(id).appendChild(e);
+};
+
+function makeNodeFromJson(json) {
+    let jsonPars = JSON.parse(json);
+    let startNode = document.createElement('div')
+    let node = nodeToString(jsonToHtml(jsonPars, startNode));
+    return node;
+}
 
 function nodeToString(node) {
     let tmpNode = document.createElement("div");
@@ -38,10 +58,6 @@ function nodeToString(node) {
     return str;
 }
 
-function insertNode(id, node) {
-    document.getElementById(id).innerHTML = node
-};
-
 
 function jsonToHtml(json, parent) {
     let keys = Object.keys(json);
@@ -49,32 +65,34 @@ function jsonToHtml(json, parent) {
 
     for (let key of keys) {
         let value = json[key];
+        // console.log('key= ', key, ' value= ', value);
+        switch (true) {
+            case (key.charAt(0) == '-'): //Atribute names in Json have '-' at the beginning
+                parent.setAttribute(key.substr(1), value);
+                break;
 
-        //Atribute names in Json have '-' at the beginning   
-        if (key.charAt(0) == '-') {
-            parent.setAttribute(key.substr(1), value);
+            case (key == "#text"): //Text content has '#text' key
+                parent.textContent = value;
+                break;
 
-            //Text content has '#text' key
-        } else if (key == "#text") {
-            parent.textContent = value;
+            case (value.constructor === Array):
+                value.map(element => {
+                    let childA = document.createElement(key);
+                    jsonToHtml(element, childA);
+                    parent.appendChild(childA);
+                    // console.log("PARENT ARRAY= ", parent);
+                });
+                break;
 
-            //Array keys are numbers 
-        } else if (parseInt(key) > -1) {
-            let child = document.createElement(parent.tagName);
-            if (typeof value != "string") {
-                jsonToHtml(value, child);
-            }
-            parent.appendChild(child);
-            // console.log("parent= ", parent);
-
-        } else {
-            let child = document.createElement(key);
-            if (typeof value != "string") {
-                jsonToHtml(value, child);
-            }
-            parent.appendChild(child);
-            // console.log("parent= ", parent);
+            default:
+                let childB = document.createElement(key);
+                if (typeof value == "object") {
+                    jsonToHtml(value, childB);
+                }
+                parent.appendChild(childB);
+                // console.log("PARENT DEFAULT= ", parent);
         }
     }
+    // console.log("PARENT RETURN= ", parent)
     return parent;
 }
