@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>test</title>
+
+    <script type='text/javascript'>
+        window.onload = () => {
+            let p = document.createElement('p');
+            let text = document.createTextNode("loaded")
+            p.appendChild(text);
+            document.getElementById('start').appendChild(p);
+        };
+        timeFunction();
+
+        function timeFunction() {
+            setTimeout(() => {
+                let p = document.createElement('p');
+                let text = document.createTextNode("after 2 sec")
+                p.appendChild(text);
+                document.getElementById('start').appendChild(p);
+            }, 2000);
+        };
+    </script>
+</head>
+
+<body>
+    <Main id="start">
+        <p>loading</p>
+    </Main>
+</body>
+
+</html>
