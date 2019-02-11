@@ -1,3 +1,5 @@
+// Different articles 
+
 var homeDiv = `<div id="home">
 <h1 class="articleName1">Create Stunning</h1>
 <h1 class="articleName2">Visual Media</h1>
@@ -27,6 +29,10 @@ var contactDiv = `<div id="contacts">
 <p class="text">Website www.labas.lt</p>
 </div>`;
 
+// 
+
+// Functions to change articles
+
 function addHome() {
 
     document.getElementById("article").innerHTML = homeDiv;
@@ -50,8 +56,6 @@ function addContacts() {
     document.getElementById("article").innerHTML = contactDiv;
 
 }
-
-
 
 // var homeObject = {
 //     "h1": "This is about us page",
@@ -128,7 +132,6 @@ function addContacts() {
 //     document.getElementById("text3").appendChild(document.createTextNode(jsonObject['p3']));
 
 //     console.log("Labas");
-
 // }
 
 
